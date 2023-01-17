@@ -35,3 +35,9 @@ Run unit tests in watch mode.
 ## Analyze webpack bundle
 
     npm run analyze
+
+
+# References
+
+- Material Design Web Components: https://github.com/material-components/material-web
+- Demo: https://mwc-demos.glitch.me/

@@ -1,1 +1,12 @@
 <div class="message">${message}</div>
+
+<md-filled-button label="Press me" click.trigger="_click()"></md-filled-button>
+
+<!-- value.two-way is not working -->
+<md-filled-text-field label="Label text" value.from-view="message"></md-filled-text-field>
+
+<md-switch label="Switch" selected.from-view="_switched"></md-switch>
+Switched ${_switched}
+
+<md-checkbox checked.from-view="_checked"></md-checkbox>
+Checked ${_checked}
