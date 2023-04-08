@@ -1,18 +1,32 @@
+<!-- Required for Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
 <div class="message">${message}</div>
 
 <md-filled-button label="Press me" click.trigger="_click()"></md-filled-button>
+<md-divider></md-divider>
 
 <!-- value.two-way is not working -->
 <md-filled-text-field label="Label text" value.bind="message"></md-filled-text-field>
 
+<md-divider></md-divider>
+
 <md-switch label="Switch" selected.bind="_switched"></md-switch>
 Switched ${_switched}
 
+<md-divider></md-divider>
+
 <md-checkbox label="Checkbox" checked.bind="_checked"></md-checkbox>
 Checked ${_checked}
+
+<md-divider></md-divider>
 
 <md-outlined-segmented-button-set multi-select="false" selected.trigger="_selected()">
   <md-outlined-segmented-button label="One" icon="false"></md-outlined-segmented-button>
   <md-outlined-segmented-button label="NoCheckmark" nocheckmark></md-outlined-segmented-button>
   <md-outlined-segmented-button label="Three"></md-outlined-segmented-button>
 </md-outlined-segmented-button-set>
+
+<md-divider></md-divider>
+
+<md-standard-icon-button>check</md-standard-icon-button>
