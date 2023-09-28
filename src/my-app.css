@@ -1,3 +1,16 @@
 .message {
   background-color: lightblue;
 }
+
+:root {
+  --md-ref-typeface-brand: 'Open Sans';
+  --md-ref-typeface-plain: system-ui;
+  --md-sys-color-on-surface-variant: red;
+  --md-sys-color-primary: green;
+  --md-sys-color-secondary: yellow;
+  --md-sys-color-surface-container-highest: lightgrey;
+
+  background-color: #333;
+  font-family: "Open Sans", sans-serif;
+  color: snow;
+}

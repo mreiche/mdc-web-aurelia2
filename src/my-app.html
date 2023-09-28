@@ -1,9 +1,9 @@
 <!-- Required for Material Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 <div class="message">${message}</div>
 
-<md-filled-button label="Press me" click.trigger="_click()"></md-filled-button>
+<md-filled-button click.trigger="_click()">Press me</md-filled-button>
 <md-divider></md-divider>
 
 <!-- value.two-way is not working -->
@@ -11,13 +11,17 @@
 
 <md-divider></md-divider>
 
-<md-switch label="Switch" selected.bind="_switched"></md-switch>
-Switched ${_switched}
+<label>
+  Switched ${_switched}
+  <md-switch selected.bind="_switched"></md-switch>
+</label>
 
 <md-divider></md-divider>
 
-<md-checkbox label="Checkbox" checked.bind="_checked"></md-checkbox>
-Checked ${_checked}
+<label>
+  <md-checkbox checked.bind="_checked"></md-checkbox>
+  Checked ${_checked}
+</label>
 
 <md-divider></md-divider>
 
@@ -29,4 +33,6 @@ Checked ${_checked}
 
 <md-divider></md-divider>
 
-<md-standard-icon-button>check</md-standard-icon-button>
+<md-filled-icon-button>
+  <md-icon>check</md-icon>
+</md-filled-icon-button>
