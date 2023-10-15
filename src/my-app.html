@@ -1,38 +1,51 @@
 <!-- Required for Material Icons -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-<div class="message">${message}</div>
+<div class="section message">
+  ${message}
+</div>
 
-<md-filled-button click.trigger="_click()">Press me</md-filled-button>
-<md-divider></md-divider>
+<div class="section">
+  <md-filled-button click.trigger="_click()">Press me</md-filled-button>
+</div>
 
+<div class="section">
 <!-- value.two-way is not working -->
 <md-filled-text-field label="Label text" value.bind="message"></md-filled-text-field>
+</div>
 
-<md-divider></md-divider>
-
+<div class="section">
 <label>
   Switched ${_switched}
   <md-switch selected.bind="_switched"></md-switch>
 </label>
+</div>
 
-<md-divider></md-divider>
-
+<div class="section">
 <label>
   <md-checkbox checked.bind="_checked"></md-checkbox>
   Checked ${_checked}
 </label>
+</div>
 
-<md-divider></md-divider>
-
+<div class="section">
 <md-outlined-segmented-button-set multi-select="false" selected.trigger="_selected()">
   <md-outlined-segmented-button label="One" icon="false"></md-outlined-segmented-button>
   <md-outlined-segmented-button label="NoCheckmark" nocheckmark></md-outlined-segmented-button>
   <md-outlined-segmented-button label="Three"></md-outlined-segmented-button>
 </md-outlined-segmented-button-set>
+</div>
 
-<md-divider></md-divider>
-
+<div class="section">
 <md-filled-icon-button>
   <md-icon>check</md-icon>
 </md-filled-icon-button>
+</div>
+
+<div class="section">
+<md-filled-select change.trigger="_selectOptionChanged($event)" value.bind="_selectedValue">
+  <md-select-option value.bind="option" repeat.for="option of _selectOptions">
+    <div slot="headline">${option}</div>
+  </md-select-option>
+</md-filled-select>
+</div>

@@ -1,16 +1,24 @@
 .message {
-  background-color: lightblue;
+  background-color: dodgerblue;
+  padding: 8px;
+}
+.section {
+  margin: 16px;
 }
 
 :root {
   --md-ref-typeface-brand: 'Open Sans';
   --md-ref-typeface-plain: system-ui;
-  --md-sys-color-on-surface-variant: red;
+  --md-sys-color-on-surface-variant: #448844;
   --md-sys-color-primary: green;
-  --md-sys-color-secondary: yellow;
+  --md-sys-color-secondary: red;
   --md-sys-color-surface-container-highest: lightgrey;
 
-  background-color: #333;
+  background-color: #222222;
   font-family: "Open Sans", sans-serif;
-  color: snow;
+  color: #ddd;
+}
+
+md-filled-select::part(menu) {
+  --md-menu-container-color: lightgrey;
 }

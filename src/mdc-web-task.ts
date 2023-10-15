@@ -12,12 +12,15 @@ export const MdcWebTask = AppTask.creating(IContainer, container => {
   attrMapper.useTwoWay((el, property) => {
     switch (el.tagName) {
       case 'MD-FILLED-TEXT-FIELD':
+      case 'MD-FILLED-SELECT':
+      case 'MD-OUTLINED-SELECT':
         return property === 'value'
       case 'MD-SWITCH':
         return property === 'selected'
       case 'MD-CHECKBOX':
         return property === 'checked'
       default:
+        console.warn(`Not handled element event: ${el.tagName}`)
         return false
     }
   });
@@ -36,5 +39,11 @@ export const MdcWebTask = AppTask.creating(IContainer, container => {
     'MD-FILLED-TEXT-FIELD': {
       value: valuePropertyConfig
     },
+    'MD-FILLED-SELECT': {
+      value: valuePropertyConfig
+    },
+    'MD-OUTLINED-SELECT': {
+      value: valuePropertyConfig
+    }
   });
 });
