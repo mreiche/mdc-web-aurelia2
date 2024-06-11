@@ -6,46 +6,43 @@
 </div>
 
 <div class="section">
-  <md-filled-button click.trigger="_click()">Press me</md-filled-button>
+  <mdui-button variant="filled" click.trigger="_click()">Press me</mdui-button>
 </div>
 
 <div class="section">
-<!-- value.two-way is not working -->
-<md-filled-text-field label="Label text" value.bind="message"></md-filled-text-field>
+  <mdui-text-field variant="filled" value.bind="message" label="Label text"></mdui-text-field>
 </div>
 
 <div class="section">
 <label>
+  <mdui-switch checked.bind="_switched"></mdui-switch>
   Switched ${_switched}
-  <md-switch selected.bind="_switched"></md-switch>
 </label>
 </div>
 
 <div class="section">
 <label>
-  <md-checkbox checked.bind="_checked"></md-checkbox>
+  <mdui-checkbox checked.bind="_checked"></mdui-checkbox>
   Checked ${_checked}
 </label>
 </div>
 
 <div class="section">
-<md-outlined-segmented-button-set multi-select="false" selected.trigger="_selected()">
-  <md-outlined-segmented-button label="One" icon="false"></md-outlined-segmented-button>
-  <md-outlined-segmented-button label="NoCheckmark" nocheckmark></md-outlined-segmented-button>
-  <md-outlined-segmented-button label="Three"></md-outlined-segmented-button>
-</md-outlined-segmented-button-set>
+  <mdui-segmented-button-group value.bind="_segmentedButtonValue" selects="multiple">
+    <mdui-segmented-button value="day">Day</mdui-segmented-button>
+    <mdui-segmented-button value="week">Week</mdui-segmented-button>
+    <mdui-segmented-button value="month">Month</mdui-segmented-button>
+  </mdui-segmented-button-group>
+  Selected: ${_segmentedButtonValue}
 </div>
 
 <div class="section">
-<md-filled-icon-button>
-  <md-icon>check</md-icon>
-</md-filled-icon-button>
+  <mdui-button-icon icon="check" click.trigger="_click()"></mdui-button-icon>
 </div>
 
 <div class="section">
-<md-filled-select change.trigger="_selectOptionChanged($event)" value.bind="_selectedValue">
-  <md-select-option value.bind="option" repeat.for="option of _selectOptions">
-    <div slot="headline">${option}</div>
-  </md-select-option>
-</md-filled-select>
+  <mdui-select value="item-1" value.bind="_selectValue">
+    <mdui-menu-item value.bind="option" repeat.for="option of _selectOptions">${option}</mdui-menu-item>
+  </mdui-select>
+  Selected: ${_selectValue}
 </div>
