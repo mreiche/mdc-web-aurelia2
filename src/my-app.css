@@ -2,12 +2,14 @@
   background-color: dodgerblue;
   padding: 8px;
 }
-.section {
-  margin: 16px;
-}
 
 :root {
   background-color: #222222;
   font-family: "Open Sans", sans-serif;
   color: #ddd;
+}
+
+.mdui-prose {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
