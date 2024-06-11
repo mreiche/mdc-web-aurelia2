@@ -1,8 +1,8 @@
 import Aurelia from 'aurelia'
 import {MyApp} from './my-app'
-import {MdcWebTask} from "./mdc-web-task";
+import {MduiWebTask} from "aurelia-mdui";
 
 Aurelia
-    .register(MdcWebTask)
+    .register(MduiWebTask)
     .app(MyApp)
     .start();

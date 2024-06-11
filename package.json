@@ -8,8 +8,10 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "@material/web": "^1.0.0",
-    "aurelia": "latest"
+    "@mdui/icons": "^1.0.2",
+    "aurelia": "latest",
+    "aurelia-mdui": "^0.0.1",
+    "mdui": "^2.1.1"
   },
   "devDependencies": {
     "@aurelia/testing": "latest",

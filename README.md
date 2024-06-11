@@ -39,5 +39,4 @@ Run unit tests in watch mode.
 
 # References
 
-- Material Design Web Components: https://github.com/material-components/material-web
-- Demo: https://mwc-demos.glitch.me/
+- Material Design Web Components: https://www.mdui.org/
