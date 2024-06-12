@@ -123,10 +123,10 @@
       <div class="mdui-prose">
         <h3>SegmentedButton (${_segmentedButtonValue})</h3>
         <mdui-segmented-button-group value.bind="_segmentedButtonValue" selects="multiple">
-          <mdui-segmented-button value="day">Day</mdui-segmented-button>
-          <mdui-segmented-button value="week">Week</mdui-segmented-button>
-          <mdui-segmented-button value="month">Month</mdui-segmented-button>
+          <mdui-segmented-button repeat.for="option of _segmentedButtonOptions" value.bind="option.value">${option.label}</mdui-segmented-button>
         </mdui-segmented-button-group>
+        <br>
+        <mdui-button click.trigger="_randomizeDay()">Randomize first</mdui-button>
       </div>
 
       <mdui-divider></mdui-divider>

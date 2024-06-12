@@ -1,6 +1,10 @@
 import 'mdui/mdui.css'
 import 'mdui'
-import { snackbar } from 'mdui'
+
+type Time = {
+  value: string,
+  label: string
+}
 
 export class MyApp {
   public _buttonMsg = ''
@@ -9,7 +13,12 @@ export class MyApp {
   private _checked = true
   private readonly _selectOptions = ["A", "B", "C"]
   private _selectValue = "A"
-  private _segmentedButtonValue = ["day"]
+  private readonly _segmentedButtonOptions:Time[] = [
+    {value: "day", label: "Day"},
+    {value: "week", label: "Week"},
+    {value: "month", label: "Month"},
+  ]
+  private _segmentedButtonValue = this._segmentedButtonOptions[0].value
   private _snackbarMsg:string
   private _snackbarOpen:boolean
   private _collapsedItems = ["item-1"]
@@ -43,4 +52,9 @@ export class MyApp {
     this._circularProgressValue=Math.random()
   }
 
+  private _randomizeDay() {
+    const rand = Math.round(Math.random()*100)
+    this._segmentedButtonOptions[0].value = "value:"+rand
+    this._segmentedButtonOptions[0].label = "label:"+rand
+  }
 }
