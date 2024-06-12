@@ -1,48 +1,192 @@
-<!-- Required for Material Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<div class="section message">
-  ${message}
-</div>
+<div class="example-contained" style="position: relative; overflow: hidden">
+  <mdui-navigation-drawer contained open.bind="_drawerOpened">
+    <mdui-navigation-rail value="recent" style="position: relative">
+      <mdui-navigation-rail-item icon="watch_later" value="recent">Recent</mdui-navigation-rail-item>
+      <mdui-navigation-rail-item icon="image" value="images">Images</mdui-navigation-rail-item>
+      <mdui-navigation-rail-item icon="library_music" value="library">Library</mdui-navigation-rail-item>
+    </mdui-navigation-rail>
+  </mdui-navigation-drawer>
 
-<div class="section">
-  <mdui-button variant="filled" click.trigger="_click()">Press me</mdui-button>
-</div>
+  <mdui-snackbar close-on-outside-click closable="true" open.bind="_snackbarOpen">${_snackbarMsg} (open: ${_snackbarOpen})</mdui-snackbar>
 
-<div class="section">
-  <mdui-text-field variant="filled" value.bind="message" label="Label text"></mdui-text-field>
-</div>
+  <div style="position: relative;overflow: hidden">
+    <mdui-top-app-bar
+            scroll-behavior="hide"
+            scroll-threshold="30"
+            scroll-target=".example-scroll-target"
+    >
+      <mdui-button-icon icon="menu" click.trigger="_drawerOpened=!_drawerOpened"></mdui-button-icon>
+      <mdui-top-app-bar-title>Drawer open: ${_drawerOpened}</mdui-top-app-bar-title>
+      <div style="flex-grow: 1"></div>
+      <mdui-button click.trigger="_dropDownOpen=true">Open Menu (${_dropDownOpen})</mdui-button>
+      <mdui-dropdown open.bind="_dropDownOpen">
+        <mdui-button-icon icon="more_vert" slot="trigger"></mdui-button-icon>
+        <mdui-menu>
+          <mdui-menu-item click.trigger="_toast('Menu item1')">Item 1</mdui-menu-item>
+          <mdui-menu-item click.trigger="_toast('Menu item2')">Item 2</mdui-menu-item>
+        </mdui-menu>
+      </mdui-dropdown>
+    </mdui-top-app-bar>
 
-<div class="section">
-<label>
-  <mdui-switch checked.bind="_switched"></mdui-switch>
-  Switched ${_switched}
-</label>
-</div>
+    <div class="example-scroll-target">
+      <div class="mdui-prose">
+        <h3>Button (${_buttonMsg})</h3>
+        <mdui-button variant="filled" click.trigger="_clickBtn()">Press me</mdui-button>
+      </div>
 
-<div class="section">
-<label>
-  <mdui-checkbox checked.bind="_checked"></mdui-checkbox>
-  Checked ${_checked}
-</label>
-</div>
+      <mdui-divider></mdui-divider>
 
-<div class="section">
-  <mdui-segmented-button-group value.bind="_segmentedButtonValue" selects="multiple">
-    <mdui-segmented-button value="day">Day</mdui-segmented-button>
-    <mdui-segmented-button value="week">Week</mdui-segmented-button>
-    <mdui-segmented-button value="month">Month</mdui-segmented-button>
-  </mdui-segmented-button-group>
-  Selected: ${_segmentedButtonValue}
-</div>
+      <div class="mdui-prose">
+        <h3>ButtonIcon (${_iconButtonMsg})</h3>
+        <mdui-button-icon icon="check" click.trigger="_clickIconBtn()"></mdui-button-icon>
+      </div>
 
-<div class="section">
-  <mdui-button-icon icon="check" click.trigger="_click()"></mdui-button-icon>
-</div>
+      <mdui-divider></mdui-divider>
 
-<div class="section">
-  <mdui-select value="item-1" value.bind="_selectValue">
-    <mdui-menu-item value.bind="option" repeat.for="option of _selectOptions">${option}</mdui-menu-item>
-  </mdui-select>
-  Selected: ${_selectValue}
+      <div class="mdui-prose">
+        <h3>Checkbox (${_checked})</h3>
+        <label>
+          <mdui-checkbox checked.bind="_checked"></mdui-checkbox>
+        </label>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Chip (${_chipSelected})</h3>
+        <label>
+          <mdui-chip selectable selected.bind="_chipSelected">Chip</mdui-chip>
+        </label>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Collapse (${_collapsedItems})</h3>
+        <mdui-collapse class="example-value" value.bind="_collapsedItems">
+          <mdui-collapse-item value="item-1">
+            <mdui-list-item slot="header" icon="near_me">Item 1</mdui-list-item>
+            <div style="margin-left: 2.5rem">
+              <mdui-list-item>Item 1 - subitem</mdui-list-item>
+            </div>
+          </mdui-collapse-item>
+          <mdui-collapse-item value="item-2">
+            <mdui-list-item slot="header" icon="near_me">Item 2</mdui-list-item>
+            <div style="margin-left: 2.5rem">
+              <mdui-list-item>Item 2 - subitem</mdui-list-item>
+            </div>
+          </mdui-collapse-item>
+        </mdui-collapse>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>LinearProgress (${_linearProgressValue})</h3>
+        <mdui-linear-progress value.bind="_linearProgressValue"></mdui-linear-progress>
+        <mdui-button click.trigger="_randomizeLinearProgress()">Randomize</mdui-button>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>CircularProgress (${_circularProgressValue})</h3>
+        <mdui-circular-progress value.bind="_circularProgressValue"></mdui-circular-progress>
+        <mdui-button click.trigger="_randomizeCircularProgress()">Randomize</mdui-button>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Menu (${_selectedMenuItems})</h3>
+        <mdui-menu selects="multiple" class="example-multiple" value.bind="_selectedMenuItems">
+          <mdui-menu-item value="item-1">Item 1</mdui-menu-item>
+          <mdui-menu-item value="item-2">Item 2</mdui-menu-item>
+          <mdui-menu-item value="item-3">Item 3</mdui-menu-item>
+        </mdui-menu>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Radio (${_radioValue})</h3>
+        <mdui-radio-group value.bind="_radioValue">
+          <mdui-radio value="chinese">Chinese</mdui-radio>
+          <mdui-radio value="english">English</mdui-radio>
+        </mdui-radio-group>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>SegmentedButton (${_segmentedButtonValue})</h3>
+        <mdui-segmented-button-group value.bind="_segmentedButtonValue" selects="multiple">
+          <mdui-segmented-button repeat.for="option of _segmentedButtonOptions" value.bind="option.value">${option.label}</mdui-segmented-button>
+        </mdui-segmented-button-group>
+        <br>
+        <mdui-button click.trigger="_randomizeDay()">Randomize first</mdui-button>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Select (${_selectValue})</h3>
+        <mdui-select value="item-1" value.bind="_selectValue" disabled.bind="_selectDisabled">
+          <mdui-menu-item value.bind="option" repeat.for="option of _selectOptions">${option}</mdui-menu-item>
+        </mdui-select>
+        <mdui-button click.trigger="_selectDisabled=!_selectDisabled">${_selectDisabled?'Enable':'Disable'}</mdui-button>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Slider (${_sliderValue})</h3>
+        <mdui-slider value.bind="_sliderValue" disabled.bind="_sliderDisabled"></mdui-slider>
+        <mdui-button click.trigger="_sliderDisabled=!_sliderDisabled">${_sliderDisabled?'Enable':'Disable'}</mdui-button>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>RangeSlider (${_rangeSliderValue})</h3>
+        <mdui-range-slider value.bind="_rangeSliderValue" disabled.bind="_rangeSliderDisabled"></mdui-range-slider>
+        <mdui-button click.trigger="_rangeSliderDisabled=!_rangeSliderDisabled">${_rangeSliderDisabled?'Enable':'Disable'}</mdui-button>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Switch (${_switched})</h3>
+        <label>
+          <mdui-switch checked.bind="_switched"></mdui-switch>
+        </label>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>Tabs (${_selectedTab})</h3>
+        <mdui-tabs value.bind="_selectedTab">
+          <mdui-tab value="tab-1">Tab 1</mdui-tab>
+          <mdui-tab value="tab-2">Tab 2</mdui-tab>
+          <mdui-tab value="tab-3">Tab 3</mdui-tab>
+
+          <mdui-tab-panel slot="panel" value="tab-1">Panel 1</mdui-tab-panel>
+          <mdui-tab-panel slot="panel" value="tab-2" disabled.bind="_tabDisabled">Panel 2</mdui-tab-panel>
+          <mdui-tab-panel slot="panel" value="tab-3">Panel 3</mdui-tab-panel>
+        </mdui-tabs>
+      </div>
+
+      <mdui-divider></mdui-divider>
+
+      <div class="mdui-prose">
+        <h3>TextField (${_textFieldMsg})</h3>
+        <mdui-text-field variant="filled" value.bind="_textFieldMsg" label="Label text" disabled.bind="_textFieldDisabled"></mdui-text-field>
+        <mdui-button click.trigger="_textFieldDisabled=!_textFieldDisabled">${_textFieldDisabled?'Enable':'Disable'}</mdui-button>
+      </div>
+
+    </div>
+  </div>
 </div>
