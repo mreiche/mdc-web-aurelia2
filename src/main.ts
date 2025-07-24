@@ -1,8 +1,17 @@
-import Aurelia from 'aurelia'
+import {Aurelia, Registration} from 'aurelia'
 import {MyApp} from './my-app'
 import {MduiWebTask} from "./mdui-web-task";
+import {NumberValueConverter} from "t-systems-aurelia-components/src/value-converters/number-value-converter";
+import {ISanitizer} from "@aurelia/runtime-html"
+import {SanitizeHtmlHtmlSanitizer} from "t-systems-aurelia-components/src/value-converters/sanitize-html-html-sanitizer";
+import {PercentValueConverter} from "t-systems-aurelia-components/src/value-converters/percent-value-converter";
 
 Aurelia
-    .register(MduiWebTask)
+    .register(
+        MduiWebTask,
+        NumberValueConverter,
+        PercentValueConverter,
+        Registration.singleton(ISanitizer, SanitizeHtmlHtmlSanitizer)
+    )
     .app(MyApp)
     .start();

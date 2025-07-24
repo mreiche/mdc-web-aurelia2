@@ -84,7 +84,7 @@
       <mdui-divider></mdui-divider>
 
       <div class="mdui-prose">
-        <h3>LinearProgress (${_linearProgressValue})</h3>
+        <h3>LinearProgress (${_linearProgressValue|percent})</h3>
         <mdui-linear-progress value.bind="_linearProgressValue"></mdui-linear-progress>
         <mdui-button click.trigger="_randomizeLinearProgress()">Randomize</mdui-button>
       </div>
@@ -92,7 +92,7 @@
       <mdui-divider></mdui-divider>
 
       <div class="mdui-prose">
-        <h3>CircularProgress (${_circularProgressValue})</h3>
+        <h3>CircularProgress (${_circularProgressValue|percent})</h3>
         <mdui-circular-progress value.bind="_circularProgressValue"></mdui-circular-progress>
         <mdui-button click.trigger="_randomizeCircularProgress()">Randomize</mdui-button>
       </div>

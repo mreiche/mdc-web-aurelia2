@@ -10,7 +10,9 @@
   "dependencies": {
     "aurelia": "latest",
     "aurelia-mdui": "^0.0.2",
-    "mdui": "^2.1.1"
+    "mdui": "^2.1.1",
+    "sanitize-html": "^2.17.0",
+    "t-systems-aurelia-components": "^2.0.2"
   },
   "devDependencies": {
     "@aurelia/testing": "latest",
@@ -35,7 +37,7 @@
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.2",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.4",
+    "typescript": "^5.8.3",
     "webpack": "5.76.0",
     "webpack-bundle-analyzer": "^4.7.0",
     "webpack-cli": "^5.0.1",

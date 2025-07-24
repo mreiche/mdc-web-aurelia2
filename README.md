@@ -40,3 +40,4 @@ Run unit tests in watch mode.
 # References
 
 - Material Design Web Components: https://www.mdui.org/
+- Aurelia Components: https://github.com/telekom-mms/aurelia-components

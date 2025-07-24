@@ -31,7 +31,7 @@ module.exports = function(env, { analyze }) {
     },
     resolve: {
       extensions: ['.ts', '.js'],
-      modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'dev-app'), 'node_modules'],
+      modules: [path.resolve(__dirname, 'src'), 'node_modules'],
       alias: production ? {
         // add your production aliasing here
       } : {
@@ -69,7 +69,7 @@ module.exports = function(env, { analyze }) {
         { test: /\.(png|svg|jpg|jpeg|gif)$/i, type: 'asset' },
         { test: /\.(woff|woff2|ttf|eot|svg|otf)(\?v=[0-9]\.[0-9]\.[0-9])?$/i,  type: 'asset' },
         { test: /\.css$/i, use: [ 'style-loader', cssLoader, postcssLoader ] },
-        { test: /\.ts$/i, use: ['ts-loader', '@aurelia/webpack-loader'], exclude: /node_modules/ },
+        { test: /\.ts$/i, use: ['ts-loader', '@aurelia/webpack-loader'] },
         {
           test: /[/\\]src[/\\].+\.html$/i,
           use: '@aurelia/webpack-loader',
