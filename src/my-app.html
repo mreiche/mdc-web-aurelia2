@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-<div class="example-contained" style="position: relative; overflow: hidden">
+<div style="position: relative; overflow: hidden">
   <mdui-navigation-drawer contained open.bind="_drawerOpened">
     <mdui-navigation-rail value="recent" style="position: relative">
       <mdui-navigation-rail-item icon="watch_later" value="recent">Recent</mdui-navigation-rail-item>
@@ -132,8 +132,8 @@
       <mdui-divider></mdui-divider>
 
       <div class="mdui-prose">
-        <h3>Select (${_selectValue})</h3>
-        <mdui-select value="item-1" value.bind="_selectValue" disabled.bind="_selectDisabled">
+        <h3>Select Theme (${_selectValue})</h3>
+        <mdui-select value="item-1" value.bind="_selectValue" disabled.bind="_selectDisabled" change.trigger="_changeTheme($event)">
           <mdui-menu-item value.bind="option" repeat.for="option of _selectOptions">${option}</mdui-menu-item>
         </mdui-select>
         <mdui-button click.trigger="_selectDisabled=!_selectDisabled">${_selectDisabled?'Enable':'Disable'}</mdui-button>

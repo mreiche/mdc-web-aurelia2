@@ -1,7 +1,7 @@
-import 'mdui/mdui.css'
-import 'mdui'
 import {NumberValueConverter} from "t-systems-aurelia-components/src/value-converters/number-value-converter";
 import {inject} from "aurelia";
+import { setTheme} from 'mdui';
+import {Theme} from "mdui/internal/theme";
 
 type Time = {
     value: string,
@@ -14,8 +14,8 @@ export class MyApp {
     public _iconButtonMsg = ''
     private _switched = true
     private _checked = true
-    private readonly _selectOptions = ["A", "B", "C"]
-    private _selectValue = "A"
+    private readonly _selectOptions = ["dark", "light", "auto"]
+    private _selectValue: Theme = "auto"
     private readonly _segmentedButtonOptions: Time[] = [
         {value: "day", label: "Day"},
         {value: "week", label: "Week"},
@@ -65,5 +65,9 @@ export class MyApp {
         const rand = Math.round(Math.random() * 100)
         this._segmentedButtonOptions[0].value = "value:" + rand
         this._segmentedButtonOptions[0].label = "label:" + rand
+    }
+
+    private _changeTheme($event: Event) {
+        setTheme(this._selectValue)
     }
 }
