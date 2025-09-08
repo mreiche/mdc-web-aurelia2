@@ -36,8 +36,8 @@ Run unit tests in watch mode.
 
     npm run analyze
 
+## References
 
-# References
-
+- Aurelia 2 / MDUI bridge: https://github.com/mreiche/aurelia-mdui
 - Material Design Web Components: https://www.mdui.org/
 - Aurelia Components: https://github.com/telekom-mms/aurelia-components
