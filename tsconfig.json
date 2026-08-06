@@ -1,19 +1,22 @@
 {
   "compilerOptions": {
     "module": "esnext",
-    "moduleResolution": "node",
     "skipLibCheck": true,
     "target": "es2022",
+    "strict": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "importHelpers": true,
     "sourceMap": true
   },
+    "types": [
+      "jest"
+    ],
   "include": [
-    "test",
     "src"
   ],
-  "files": [
-    "src/resource.d.ts"
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
