@@ -9,9 +9,9 @@
     "importHelpers": true,
     "sourceMap": true
   },
-    "types": [
-      "jest"
-    ],
+  "types": [
+    "jest"
+  ],
   "include": [
     "src"
   ],

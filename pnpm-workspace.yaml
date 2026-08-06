@@ -5,5 +5,5 @@ autoInstallPeers: true
 allowBuilds:
   unrs-resolver: false
 minimumReleaseAgeExclude:
-  - aurelia-mdui@0.0.3
+  - aurelia-mdui@0.0.3 || 0.0.4
   - mreiche-aurelia-components@2.0.3

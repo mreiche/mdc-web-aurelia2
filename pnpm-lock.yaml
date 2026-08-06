@@ -15,8 +15,8 @@ importers:
         specifier: 2.0.0-rc.2
         version: 2.0.0-rc.2
       aurelia-mdui:
-        specifier: 0.0.3
-        version: 0.0.3(aurelia@2.0.0-rc.2)
+        specifier: 0.0.4
+        version: 0.0.4(aurelia@2.0.0-rc.2)
       mdui:
         specifier: ^2.1.5
         version: 2.1.5
@@ -1194,8 +1194,8 @@ packages:
   async@3.2.6:
     resolution: {integrity: sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA==}
 
-  aurelia-mdui@0.0.3:
-    resolution: {integrity: sha512-P1zogpPnAHB9W2tS9Kvu8lcIHNSydFgAxF0RwswRKkqkfiOue0upH4TIH9IHa4d/Wt0JltOxQzivQdlSwTnX1g==}
+  aurelia-mdui@0.0.4:
+    resolution: {integrity: sha512-8SNGihqJgrTNKFtjGTfDJiaXlf8pSymp1CwL0cqD3p9/OIJwo0QEoRS8qy1j+reyOtjvwJI+FNBP/sLSbE6VfA==}
     peerDependencies:
       aurelia: v2.0.0-rc.2
 
@@ -4810,7 +4810,7 @@ snapshots:
 
   async@3.2.6: {}
 
-  aurelia-mdui@0.0.3(aurelia@2.0.0-rc.2):
+  aurelia-mdui@0.0.4(aurelia@2.0.0-rc.2):
     dependencies:
       aurelia: 2.0.0-rc.2
 
