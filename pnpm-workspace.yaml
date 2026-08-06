@@ -1,0 +1,9 @@
+# webpack.config.js aliases @aurelia/* to node_modules/<pkg>/dist/esm/index.dev.mjs
+# in dev mode, so transitive @aurelia packages must sit in the root node_modules.
+shamefullyHoist: true
+autoInstallPeers: true
+allowBuilds:
+  unrs-resolver: false
+minimumReleaseAgeExclude:
+  - aurelia-mdui@0.0.3
+  - mreiche-aurelia-components@2.0.3

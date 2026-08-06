@@ -1,4 +1,4 @@
-import {NumberValueConverter} from "t-systems-aurelia-components/src/value-converters/number-value-converter";
+import {NumberValueConverter} from "mreiche-aurelia-components/src/value-converters/number-value-converter";
 import {inject} from "aurelia";
 import { setTheme} from 'mdui';
 import {Theme} from "mdui/internal/theme";
